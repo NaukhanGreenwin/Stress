@@ -96,6 +96,8 @@ body {
 }
 
 img, svg { max-width: 100%; }
+/* <picture> is a wrapper for the sources only; the <img> inside it stays the layout box. */
+picture { display: contents; }
 img { height: auto; display: block; }
 
 /* ----------------------------------------------------------------- type -- */
@@ -335,7 +337,7 @@ strong { font-weight: 600; }
   .nav .btn { display: none; }
 }
 @media (max-width: 560px) {
-  .brand img { width: 144px; }
+  .brand img { width: 160px; }
   .header-inner { min-height: 64px; gap: var(--s3); }
   .header-actions { gap: var(--s2); }
   .header-phone span { display: none; }

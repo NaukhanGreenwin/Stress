@@ -7,7 +7,9 @@
 <meta name="description" content="Rental property management in Oakville, Burlington, Milton, Mississauga and Toronto. Mixed-use, freehold residential and investment condos, managed properly. 12+ years of experience. Book a free consultation.">
 <link rel="canonical" href="https://stressfreepm.ca/">
 <meta name="theme-color" content="#22255a">
-<link rel="icon" href="assets/images/favicon.png" type="image/png">
+<link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="180x180">
+<link rel="apple-touch-icon" href="assets/images/favicon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Stress Free Property Management">
@@ -24,7 +26,7 @@
 <meta name="twitter:description" content="Rental property management in Oakville, Burlington, Milton, Mississauga and Toronto. Mixed-use, freehold residential and investment condos, managed properly. 12+ years of experience. Book a free consultation.">
 <meta name="twitter:image" content="https://stressfreepm.ca/assets/images/social-preview.jpg">
 
-<link rel="preload" as="image" href="assets/images/home-exterior-oakville.jpg" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="assets/images/home-exterior-oakville-1400.webp" imagesrcset="assets/images/home-exterior-oakville-900.webp 900w, assets/images/home-exterior-oakville-1400.webp 1400w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script type="application/ld+json">
 {
@@ -102,7 +104,7 @@
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="index.html" aria-label="Stress Free Property Management, home">
-        <img src="assets/images/logo.png" alt="Stress Free Property Management" width="178" height="34">
+        <img src="assets/images/logo.svg" alt="Stress Free Property Management" width="1280" height="240">
       </a>
 
       <nav class="nav" id="primary-nav" aria-label="Primary">
@@ -141,9 +143,10 @@
         </div>
 
         <figure class="hero-figure">
-          <img src="assets/images/home-exterior-oakville.jpg"
-               alt="A detached two storey home with a stone facade and double garage, of the kind we manage across Oakville and Halton"
-               width="701" height="953" fetchpriority="high">
+          <picture>
+            <source type="image/webp" srcset="assets/images/home-exterior-oakville-900.webp 900w, assets/images/home-exterior-oakville-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 50vw">
+            <img src="assets/images/home-exterior-oakville-640.jpg" alt="A red brick two storey detached home in a Halton subdivision, with a covered porch, a double garage and the recycling bins out at the curb" width="1400" height="1050" fetchpriority="high">
+          </picture>
           <p class="hero-note"><strong>12+</strong><span>years of experience managing rental property across the GTA</span></p>
         </figure>
       </div>
@@ -212,7 +215,10 @@
     <section class="band band--surface">
       <div class="canvas feature-inner feature--bleed-left">
         <figure class="feature-media feature-media--photo">
-          <img src="assets/images/living-room-interior.jpg" alt="A bright living room with tall windows and a linear fireplace in a rental home under our management" width="570" height="493" loading="lazy">
+          <picture>
+            <source type="image/webp" srcset="assets/images/living-room-interior-760.webp 760w, assets/images/living-room-interior-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 52vw">
+            <img src="assets/images/living-room-interior-640.jpg" alt="A double height living room with a linear gas fireplace and a wall of windows onto the garden" width="1400" height="1120" loading="lazy" decoding="async">
+          </picture>
         </figure>
         <div class="feature-body">
           <p class="eyebrow">Our mission</p>
@@ -270,7 +276,10 @@
     <section class="band">
       <div class="canvas feature-inner feature--bleed-right">
         <figure class="feature-media feature-media--wide">
-          <img src="assets/images/living-room-wide.jpg" alt="An open plan living area in a managed rental property, prepared for viewings" width="538" height="271" loading="lazy">
+          <picture>
+            <source type="image/webp" srcset="assets/images/living-room-wide-760.webp 760w, assets/images/living-room-wide-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 52vw">
+            <img src="assets/images/living-room-wide-640.jpg" alt="An open plan living and dining room with corner windows and a gas fireplace, turned over between tenancies" width="1400" height="933" loading="lazy" decoding="async">
+          </picture>
         </figure>
         <div class="feature-body">
           <p class="eyebrow">Why owners stay</p>
@@ -364,7 +373,7 @@
     <div class="shell">
       <div class="footer-grid">
         <div>
-          <img src="assets/images/logo-reversed.png" alt="Stress Free Property Management" width="190" height="36">
+          <img src="assets/images/logo-reversed.svg" alt="Stress Free Property Management" width="1280" height="240">
           <p class="footer-about">Rental property management for mixed-use, freehold residential and
             condominium properties across Oakville, Burlington, Milton, Mississauga and Toronto.</p>
           <a class="footer-phone" href="tel:+18887793121">1-888-779-3121</a>
