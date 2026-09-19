@@ -1045,3 +1045,15 @@ figcaption strong {
 
 /* contact page: the client-input note sits under the contact list */
 .note--aside { margin-top: var(--s8); max-width: none; }
+
+/* ------------------------------------------------------- final overrides -- */
+
+/* the contact intro needs the same heading-to-lede rhythm as the rest */
+.contact-aside h2 { margin-bottom: var(--s4); }
+.contact-aside .lede { margin-bottom: var(--s8); }
+
+/* on a phone, stacked buttons read better at one width */
+@media (max-width: 560px) {
+  .btn-row .btn { flex: 1 1 100%; }
+  .cta-actions.btn-row { width: 100%; }
+}
