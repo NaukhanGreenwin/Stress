@@ -1,52 +1,55 @@
-/* Stress Free Property Management — minimal progressive enhancement. No dependencies. */
+/* Stress Free Property Management — progressive enhancement only. No dependencies. */
 (function () {
   "use strict";
 
-  // Mobile navigation
+  /* ------------------------------------------------------------- nav ---- */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("primary-nav");
 
   if (toggle && nav) {
-    var mq = window.matchMedia("(max-width: 960px)");
+    var mq = window.matchMedia("(max-width: 1000px)");
 
-    function close() {
-      nav.hidden = true;
-      toggle.setAttribute("aria-expanded", "false");
-    }
-
-    function sync() {
-      if (mq.matches) {
-        close();
+    function setOpen(open) {
+      if (open) {
+        nav.setAttribute("data-open", "");
       } else {
-        nav.hidden = false;
-        toggle.setAttribute("aria-expanded", "false");
+        nav.removeAttribute("data-open");
       }
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close the main menu" : "Open the main menu");
     }
 
     toggle.addEventListener("click", function () {
-      var open = toggle.getAttribute("aria-expanded") === "true";
-      nav.hidden = open;
-      toggle.setAttribute("aria-expanded", open ? "false" : "true");
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
     });
 
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && mq.matches && !nav.hidden) {
-        close();
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        setOpen(false);
         toggle.focus();
       }
     });
 
+    document.addEventListener("click", function (e) {
+      if (!mq.matches) return;
+      if (toggle.getAttribute("aria-expanded") !== "true") return;
+      if (nav.contains(e.target) || toggle.contains(e.target)) return;
+      setOpen(false);
+    });
+
+    function sync() { setOpen(false); }
     if (mq.addEventListener) {
       mq.addEventListener("change", sync);
     } else if (mq.addListener) {
       mq.addListener(sync);
     }
-    sync();
+    setOpen(false);
   }
 
-  // Enquiry form. TODO: point action= at a real endpoint (Formspree, Netlify Forms,
-  // or the client's own handler) before this site goes live. Until then the submit
-  // is intercepted so nothing is silently lost.
+  /* ------------------------------------------------ enquiry form ------- */
+  /* TODO: point action= at a real endpoint (the client's own handler,
+     Formspree, Netlify Forms) before launch. Until then the submit is
+     intercepted so nothing is silently lost. */
   var form = document.querySelector("[data-enquiry-form]");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -55,7 +58,7 @@
         var note = form.querySelector("[data-form-status]");
         if (note) {
           note.textContent =
-            "Demo build: this form is not connected to a mailbox yet. Please call 1-888-779-3121 or email info@stressfreepm.ca.";
+            "This preview build is not connected to a mailbox yet. Please call 1-888-779-3121 or email info@stressfreepm.ca.";
           note.hidden = false;
           note.focus();
         }
